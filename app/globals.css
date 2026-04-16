@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+@theme inline {
+  /* Brand Colors */
+  --color-white: #ffffff;
+  --color-off-white: #fafaf8;
+  --color-dark: #111111;
+  --color-dark-2: #1c1c1c;
+  --color-rose: #d4a8a4;
+  --color-rose-light: #f2e8e7;
+  --color-gold: #c4a882;
+  --color-gold-light: #f5efe5;
+  --color-text: #111111;
+  --color-text-muted: #666666;
+  --color-border: #e8e8e8;
+
+  /* Fonts */
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-dm-sans);
+  --font-script: var(--font-dancing);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #111111;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Heading utility */
+.font-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-dancing), cursive;
 }
