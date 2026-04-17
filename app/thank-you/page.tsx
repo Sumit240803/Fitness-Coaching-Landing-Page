@@ -33,7 +33,7 @@ export default function ThankYou() {
         </p>
 
         <a
-          href="https://calendly.com/YOUR_CALENDLY_LINK"
+          href="https://calendly.com/shwetasetia16"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-4 rounded-full bg-[#d4a8a4] text-white font-medium text-base hover:bg-[#c4918d] transition-colors"

@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { collection, onSnapshot, orderBy, query, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { verifyAdminPassword } from "@/app/actions/verifyAdmin";
 import {
   X,
   Eye,
@@ -97,11 +98,11 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const correct = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "admin123";
-    if (pw === correct) {
-      localStorage.setItem("cbs_admin", "1");
+    const valid = await verifyAdminPassword(pw);
+    if (valid) {
+      sessionStorage.setItem("cbs_admin", "1");
       onUnlock();
     } else {
       setError(true);
@@ -138,6 +139,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
             <button
               type="button"
               onClick={() => setShow((s) => !s)}
+              aria-label={show ? "Hide password" : "Show password"}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-[#999]"
             >
               {show ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -159,6 +161,15 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 // ─── Detail Panel ──────────────────────────────────────────────────────────────
 
 function DetailPanel({ app, onClose }: { app: Application; onClose: () => void }) {
+  // Close on Escape key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [onClose]);
+
   const Field = ({ icon: Icon, label, value }: { icon: React.ElementType; label: string; value: string | string[] }) => (
     <div className="py-4 border-b border-[#f0f0f0] last:border-0">
       <div className="flex items-center gap-2 mb-1.5">
@@ -192,7 +203,7 @@ function DetailPanel({ app, onClose }: { app: Application; onClose: () => void }
             <h2 className="font-heading text-xl font-bold text-[#111111]">{app.name}</h2>
             <p className="text-xs text-[#999] mt-0.5">{formatDate(app.submittedAt)}</p>
           </div>
-          <button onClick={onClose} className="p-2 rounded-xl hover:bg-[#f5f5f5] transition">
+          <button onClick={onClose} aria-label="Close detail panel" className="p-2 rounded-xl hover:bg-[#f5f5f5] transition">
             <X size={18} className="text-[#666]" />
           </button>
         </div>
@@ -471,11 +482,11 @@ export default function AdminPage() {
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("cbs_admin") === "1") setUnlocked(true);
+    if (sessionStorage.getItem("cbs_admin") === "1") setUnlocked(true);
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("cbs_admin");
+    sessionStorage.removeItem("cbs_admin");
     setUnlocked(false);
   };
 

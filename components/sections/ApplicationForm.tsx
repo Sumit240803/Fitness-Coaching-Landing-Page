@@ -39,21 +39,22 @@ function PillRadio({
   options,
   value,
   onChange,
-  name,
+  label,
 }: {
   options: string[];
   value: string;
   onChange: (v: string) => void;
-  name: string;
+  label?: string;
 }) {
   return (
-    <div className="flex flex-wrap gap-2 mt-2">
+    <div className="flex flex-wrap gap-2 mt-2" role="radiogroup" aria-label={label}>
       {options.map((opt) => (
         <button
           key={opt}
           type="button"
+          role="radio"
+          aria-checked={value === opt}
           onClick={() => onChange(opt)}
-          aria-pressed={value === opt}
           className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
             value === opt
               ? "bg-[#111111] text-white border-[#111111]"
@@ -82,13 +83,14 @@ function PillCheckbox({
     );
   };
   return (
-    <div className="flex flex-wrap gap-2 mt-2">
+    <div className="flex flex-wrap gap-2 mt-2" role="group" aria-label="Select goals">
       {options.map((opt) => (
         <button
           key={opt}
           type="button"
+          role="checkbox"
+          aria-checked={values.includes(opt)}
           onClick={() => toggle(opt)}
-          aria-pressed={values.includes(opt)}
           className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
             values.includes(opt)
               ? "bg-[#111111] text-white border-[#111111]"
@@ -110,15 +112,17 @@ function SeriousnessScale({
   onChange: (v: string) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-2 mt-2">
+    <div className="flex flex-wrap gap-2 mt-2" role="radiogroup" aria-label="Seriousness scale 1 to 10">
       {[...Array(10)].map((_, i) => {
         const num = String(i + 1);
         return (
           <button
             key={num}
             type="button"
+            role="radio"
+            aria-checked={value === num}
+            aria-label={`${num} out of 10`}
             onClick={() => onChange(num)}
-            aria-pressed={value === num}
             className={`w-10 h-10 rounded-full text-sm font-medium border transition-all ${
               value === num
                 ? "bg-[#111111] text-white border-[#111111]"
@@ -158,6 +162,7 @@ export default function ApplicationForm() {
     investment: "",
     fitnessStruggle: "",
   });
+  const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -184,6 +189,13 @@ export default function ApplicationForm() {
     }
     if (formData.goals.length === 0) {
       setError("Please select at least one goal.");
+      return;
+    }
+
+    // Validate WhatsApp number: at least 7 digits
+    const digits = formData.whatsapp.replace(/[^0-9]/g, "");
+    if (digits.length < 7 || digits.length > 15) {
+      setError("Please enter a valid WhatsApp number (7–15 digits).");
       return;
     }
 
@@ -236,8 +248,9 @@ export default function ApplicationForm() {
               >
                 {/* 1. Name */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>Your Name *</label>
+                  <label htmlFor="field-name" className={labelClass}>Your Name *</label>
                   <input
+                    id="field-name"
                     type="text"
                     className={inputClass}
                     placeholder="e.g. Priya Sharma"
@@ -248,11 +261,14 @@ export default function ApplicationForm() {
 
                 {/* 2. WhatsApp */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>WhatsApp Number *</label>
+                  <label htmlFor="field-whatsapp" className={labelClass}>WhatsApp Number *</label>
                   <input
+                    id="field-whatsapp"
                     type="tel"
                     className={inputClass}
                     placeholder="e.g. +1 234 567 8900"
+                    pattern="\+?[0-9\s\-]{7,15}"
+                    title="Enter a valid phone number (7-15 digits, optional + prefix)"
                     value={formData.whatsapp}
                     onChange={(e) => set("whatsapp", e.target.value)}
                   />
@@ -260,8 +276,9 @@ export default function ApplicationForm() {
 
                 {/* 3. Age / Height / Weight */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>Age, Height &amp; Weight *</label>
+                  <label htmlFor="field-ahw" className={labelClass}>Age, Height &amp; Weight *</label>
                   <input
+                    id="field-ahw"
                     type="text"
                     className={inputClass}
                     placeholder={'e.g. 28 years, 5\'4", 72 kg'}
@@ -272,10 +289,11 @@ export default function ApplicationForm() {
 
                 {/* 4. Profession & Routine */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>
+                  <label htmlFor="field-profession" className={labelClass}>
                     What&apos;s your profession and how does your daily routine look? *
                   </label>
                   <textarea
+                    id="field-profession"
                     rows={3}
                     className={textareaClass}
                     placeholder="e.g. Software engineer, WFH, sedentary most of the day..."
@@ -290,7 +308,7 @@ export default function ApplicationForm() {
                     When do you want to start? *
                   </label>
                   <PillRadio
-                    name="startTimeline"
+                    label="When do you want to start"
                     options={startOptions}
                     value={formData.startTimeline}
                     onChange={(v) => set("startTimeline", v)}
@@ -315,7 +333,7 @@ export default function ApplicationForm() {
                     Have you done online training before? *
                   </label>
                   <PillRadio
-                    name="previousTraining"
+                    label="Previous online training"
                     options={["Yes", "No"]}
                     value={formData.previousTraining}
                     onChange={(v) => set("previousTraining", v)}
@@ -328,7 +346,7 @@ export default function ApplicationForm() {
                     What&apos;s the main reason you&apos;ve fallen off track before? *
                   </label>
                   <PillRadio
-                    name="fallOffReason"
+                    label="Reason for falling off track"
                     options={fallOffOptions}
                     value={formData.fallOffReason}
                     onChange={(v) => set("fallOffReason", v)}
@@ -337,10 +355,11 @@ export default function ApplicationForm() {
 
                 {/* 9. Workout time */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>
+                  <label htmlFor="field-workout" className={labelClass}>
                     What time do you prefer to work out? *
                   </label>
                   <input
+                    id="field-workout"
                     type="text"
                     className={inputClass}
                     placeholder="e.g. Morning 7–8am, or evenings after 7pm"
@@ -351,10 +370,11 @@ export default function ApplicationForm() {
 
                 {/* 10. Transformation goal */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>
+                  <label htmlFor="field-transformation" className={labelClass}>
                     What does your ideal 3–6 month transformation look like? *
                   </label>
                   <textarea
+                    id="field-transformation"
                     rows={3}
                     className={textareaClass}
                     placeholder="Describe the result you want to achieve..."
@@ -382,7 +402,7 @@ export default function ApplicationForm() {
                     Which investment range are you comfortable with? *
                   </label>
                   <PillRadio
-                    name="investment"
+                    label="Investment range"
                     options={investmentOptions}
                     value={formData.investment}
                     onChange={(v) => set("investment", v)}
@@ -391,10 +411,11 @@ export default function ApplicationForm() {
 
                 {/* 13. Fitness struggle */}
                 <div className={fieldClass}>
-                  <label className={labelClass}>
+                  <label htmlFor="field-struggle" className={labelClass}>
                     What is your biggest fitness struggle right now? *
                   </label>
                   <textarea
+                    id="field-struggle"
                     rows={3}
                     className={textareaClass}
                     placeholder="Be as specific as you can..."
@@ -408,10 +429,33 @@ export default function ApplicationForm() {
                   <p className="text-red-500 text-sm">{error}</p>
                 )}
 
+                {/* Consent */}
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-[#e8e8e8] accent-[#111111]"
+                  />
+                  <span className="text-xs text-[#666666] leading-relaxed">
+                    I agree to the{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#d4a8a4] underline hover:text-[#111111]"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    and consent to my data being collected and used to process my
+                    application.
+                  </span>
+                </label>
+
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !consent}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#111111] text-white font-medium text-base hover:bg-[#333333] transition-colors disabled:opacity-60"
                 >
                   {loading ? (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
 
@@ -25,6 +25,18 @@ const videos = [
 
 export default function OnlineClasses() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const closeModal = useCallback(() => setActiveVideo(null), []);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!activeVideo) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [activeVideo, closeModal]);
 
   return (
     <>
@@ -64,7 +76,8 @@ export default function OnlineClasses() {
                 onClick={() => setActiveVideo(video.id)}
               >
                 <div className="relative w-full aspect-[4/5] bg-dark/5">
-                  {/* Thumbnail */}
+                  {/* Thumbnail — external Google Drive URL, can't use next/image */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`https://drive.google.com/thumbnail?id=${video.id}&sz=w600`}
                     alt={video.title}
@@ -120,7 +133,8 @@ export default function OnlineClasses() {
                 sandbox="allow-same-origin allow-scripts allow-popups"
               />
               <button
-                onClick={() => setActiveVideo(null)}
+                onClick={closeModal}
+                aria-label="Close video player"
                 className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors"
               >
                 <X size={18} className="text-white" />
