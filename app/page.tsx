@@ -6,6 +6,7 @@ import Transformations from "@/components/sections/Transformations";
 import WhyDietsFail from "@/components/sections/WhyDietsFail";
 import ProgramInclusions from "@/components/sections/ProgramInclusions";
 import ClientDiaries from "@/components/sections/ClientDiaries";
+import OnlineClasses from "@/components/sections/OnlineClasses";
 import MeetCoach from "@/components/sections/MeetCoach";
 import Testimonials from "@/components/sections/Testimonials";
 import ApplicationForm from "@/components/sections/ApplicationForm";
@@ -21,6 +22,7 @@ export default function Home() {
         <WhyDietsFail />
         <ProgramInclusions />
         <ClientDiaries />
+        <OnlineClasses />
         <MeetCoach />
         <Testimonials />
         <ApplicationForm />

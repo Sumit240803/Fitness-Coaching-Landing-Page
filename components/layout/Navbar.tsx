@@ -38,18 +38,30 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-[#666666] hover:text-[#111111] transition-colors"
           >
             About
           </a>
           <a
             href="#results"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("results")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-[#666666] hover:text-[#111111] transition-colors"
           >
             Results
           </a>
           <a
             href="#testimonials"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-[#666666] hover:text-[#111111] transition-colors"
           >
             Testimonials
@@ -59,6 +71,10 @@ export default function Navbar() {
         {/* CTA Button */}
         <a
           href="#apply"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
+          }}
           className="inline-flex items-center px-5 py-2.5 rounded-full bg-[#111111] text-white text-sm font-medium hover:bg-[#333333] transition-colors"
         >
           Apply Now
