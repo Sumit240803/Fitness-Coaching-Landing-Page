@@ -7,9 +7,9 @@ export default function Footer() {
         <Image
           src="/assets/logo.jpeg"
           alt="Coached by Shweta"
-          width={120}
-          height={40}
-          className="h-8 w-auto object-contain"
+          width={565}
+          height={373}
+          className="h-12 w-auto object-contain"
         />
         <a
           href="https://www.instagram.com/coachedbyshweta"

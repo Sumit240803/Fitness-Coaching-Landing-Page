@@ -7,8 +7,8 @@ import { benefits } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-white flex items-center pt-16">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32 w-full">
+    <section className="bg-white pt-24 pb-16">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text content */}
           <motion.div
@@ -64,14 +64,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Soft decorative background circle */}
+            <div className="relative w-full max-w-md">
               <div className="absolute -inset-6 rounded-[3rem] bg-[#fafaf8]" />
-              <div className="relative w-full max-w-md aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg">
+              <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg">
                 <Image
-                  src="/assets/images/WhatsApp Image 2026-04-16 at 12.20.31 PM (1).jpeg"
-                  alt="Client transformation result"
+                  src="/assets/shweta/1.jpeg"
+                  alt="Coach Shweta"
                   fill
+                  sizes="(max-width: 768px) 100vw, 448px"
                   className="object-cover"
                   priority
                 />

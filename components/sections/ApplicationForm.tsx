@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitForm, type FormData } from "@/app/actions/submitForm";
@@ -158,8 +159,8 @@ export default function ApplicationForm() {
     fitnessStruggle: "",
   });
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const set = <K extends keyof FormData>(key: K, value: FormData[K]) =>
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -191,7 +192,7 @@ export default function ApplicationForm() {
     setLoading(false);
 
     if (result.success) {
-      setSubmitted(true);
+      router.push("/thank-you");
     } else {
       setError(result.error);
     }
@@ -228,28 +229,7 @@ export default function ApplicationForm() {
           className="bg-white rounded-3xl shadow-xl p-8 lg:p-10"
         >
           <AnimatePresence mode="wait">
-            {submitted ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-12"
-              >
-                <CheckCircle2
-                  size={56}
-                  className="text-[#d4a8a4] mx-auto mb-6"
-                />
-                <h3 className="font-heading text-2xl font-bold text-[#111111] mb-3">
-                  Application Received!
-                </h3>
-                <p className="text-[#666666] text-base leading-relaxed">
-                  Thank you for applying to The Reset Program. Shweta will
-                  review your application and get back to you on WhatsApp
-                  within 24–48 hours.
-                </p>
-              </motion.div>
-            ) : (
-              <motion.form
+            <motion.form
                 key="form"
                 onSubmit={handleSubmit}
                 className="space-y-6"
@@ -444,11 +424,10 @@ export default function ApplicationForm() {
                   )}
                 </button>
                 <p className="text-center text-xs text-[#999999]">
-                  Shweta will personally review your application and reply
+                  We will personally review your application and reply
                   on WhatsApp within 24–48 hours.
                 </p>
               </motion.form>
-            )}
           </AnimatePresence>
         </motion.div>
       </div>

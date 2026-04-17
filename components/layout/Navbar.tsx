@@ -21,15 +21,15 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/assets/logo.jpeg"
             alt="Coached by Shweta"
-            width={140}
-            height={48}
-            className="h-10 w-auto object-contain"
+            width={565}
+            height={373}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>

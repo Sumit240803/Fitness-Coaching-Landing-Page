@@ -8,21 +8,42 @@ export default function MeetCoach() {
     <section id="about" className="bg-[#fafaf8] py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Coach image */}
+          {/* Left: Coach images */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative max-w-md mx-auto lg:mx-0"
           >
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg max-w-sm mx-auto lg:mx-0">
-              <Image
-                src="/assets/images/WhatsApp Image 2026-04-16 at 12.20.18 PM.jpeg"
-                alt="Coach Shweta — before and after"
-                fill
-                className="object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              {/* Portrait photo */}
+              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg col-span-2">
+                <Image
+                  src="/assets/shweta/2.jpeg"
+                  alt="Coach Shweta"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              {/* Gym photo */}
+              <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/shweta/1.jpeg"
+                  alt="Coach Shweta at the gym"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Gym photo — black outfit */}
+              <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden shadow-lg">
+                <Image
+                  src="/assets/shweta/3.jpeg"
+                  alt="Coach Shweta at the gym"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             {/* Floating stat badge */}
             <motion.div
