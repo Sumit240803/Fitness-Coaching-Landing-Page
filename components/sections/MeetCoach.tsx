@@ -23,6 +23,7 @@ export default function MeetCoach() {
                   src="/assets/shweta/2.jpeg"
                   alt="Coach Shweta"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-top"
                 />
               </div>
@@ -32,6 +33,7 @@ export default function MeetCoach() {
                   src="/assets/shweta/1.jpeg"
                   alt="Coach Shweta at the gym"
                   fill
+                  sizes="(max-width: 1024px) 50vw, 20vw"
                   className="object-cover"
                 />
               </div>
@@ -41,6 +43,7 @@ export default function MeetCoach() {
                   src="/assets/shweta/3.jpeg"
                   alt="Coach Shweta at the gym"
                   fill
+                  sizes="(max-width: 1024px) 50vw, 20vw"
                   className="object-cover"
                 />
               </div>

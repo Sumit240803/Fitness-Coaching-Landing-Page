@@ -47,6 +47,7 @@ export default function Transformations() {
                       src={t.before}
                       alt="Before transformation"
                       fill
+                      sizes="(max-width: 768px) 50vw, 17vw"
                       className="object-cover"
                     />
                     <span className="absolute top-3 left-3 text-xs font-medium bg-white/80 backdrop-blur-sm px-2 py-1 rounded-full text-[#111111]">
@@ -58,6 +59,7 @@ export default function Transformations() {
                       src={t.after}
                       alt="After transformation"
                       fill
+                      sizes="(max-width: 768px) 50vw, 17vw"
                       className="object-cover"
                     />
                     <span className="absolute top-3 left-3 text-xs font-medium bg-[#111111]/80 backdrop-blur-sm px-2 py-1 rounded-full text-white">
