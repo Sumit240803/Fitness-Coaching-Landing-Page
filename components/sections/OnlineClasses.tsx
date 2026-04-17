@@ -45,7 +45,7 @@ export default function OnlineClasses() {
               Online Classes
             </h2>
             <p className="mt-4 text-text-muted max-w-2xl mx-auto text-base">
-              Get a glimpse of our live online sessions — expert guidance,
+              Get a glimpse of our live online sessions - expert guidance,
               real-time interaction, and results-driven coaching from the comfort
               of your home.
             </p>

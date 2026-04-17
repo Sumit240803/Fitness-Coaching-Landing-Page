@@ -32,7 +32,7 @@ export default function WhyDietsFail() {
             </h2>
             <p className="text-[#666666] mt-6 text-base leading-relaxed max-w-sm">
               The issue isn&apos;t your willpower. It&apos;s the plan. Here&apos;s why
-              generic diets never last — and what we do differently.
+              generic diets never last - and what we do differently.
             </p>
             <div className="mt-10 pt-10 border-t border-[#e8e8e8]">
               <p className="font-script text-2xl text-[#d4a8a4]">

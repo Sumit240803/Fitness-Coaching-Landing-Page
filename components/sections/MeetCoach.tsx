@@ -37,7 +37,7 @@ export default function MeetCoach() {
                   className="object-cover"
                 />
               </div>
-              {/* Gym photo — black outfit */}
+              {/* Gym photo - black outfit */}
               <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden shadow-lg">
                 <Image
                   src="/assets/shweta/3.jpeg"
@@ -83,7 +83,7 @@ export default function MeetCoach() {
 
             <div className="space-y-4 text-[#555555] text-base leading-relaxed">
               <p>
-                I&apos;m Shweta — an online fitness coach who has helped hundreds of
+                I&apos;m Shweta - an online fitness coach who has helped hundreds of
                 women lose weight, build strength, and create sustainable
                 healthy habits.
               </p>

@@ -15,7 +15,7 @@ export const problems = [
     icon: "ban",
     title: "Extreme Restrictions",
     description:
-      "Boring, restrictive diets that cut out all your favourite foods — impossible to stick to long-term.",
+      "Boring, restrictive diets that cut out all your favourite foods - impossible to stick to long-term.",
   },
   {
     icon: "user-x",
@@ -27,7 +27,7 @@ export const problems = [
     icon: "calendar-x",
     title: "Inconsistent Routine",
     description:
-      "No structure to balance health with work, family, and real life — so progress stalls.",
+      "No structure to balance health with work, family, and real life - so progress stalls.",
   },
 ];
 
@@ -36,13 +36,13 @@ export const programFeatures = [
     number: "01",
     title: "Custom Nutrition Plan",
     description:
-      "Enjoy Indian meals you love — dal, sabzi, roti — with the right portions. No bland chicken and broccoli.",
+      "Enjoy Indian meals you love - dal, sabzi, roti - with the right portions. No bland chicken and broccoli.",
   },
   {
     number: "02",
     title: "Personalised Workouts",
     description:
-      "Workouts built around your schedule, fitness level, and equipment. At home or at the gym — your choice.",
+      "Workouts built around your schedule, fitness level, and equipment. At home or at the gym - your choice.",
   },
   {
     number: "03",
@@ -59,7 +59,7 @@ export const testimonials = [
     rating: 4.9,
     result: "Natural cycle restored",
     quote:
-      "I got my periods naturally this month after so long — without period medication. The workout and diet is genuinely helping me. I can't believe how much has changed.",
+      "I got my periods naturally this month after so long - without period medication. The workout and diet is genuinely helping me. I can't believe how much has changed.",
   },
   {
     category: "Results That Last",
@@ -75,7 +75,7 @@ export const testimonials = [
     rating: 4.9,
     result: "Blood markers improved",
     quote:
-      "My HDL cholesterol went from 39 to 47, triglycerides from 129 to 96. Portion control and healthier meal choices made all the difference — and I didn't feel deprived.",
+      "My HDL cholesterol went from 39 to 47, triglycerides from 129 to 96. Portion control and healthier meal choices made all the difference - and I didn't feel deprived.",
   },
   {
     category: "Hormones in Check",
@@ -83,7 +83,7 @@ export const testimonials = [
     rating: 4.9,
     result: "Regular cycles achieved",
     quote:
-      "Got my periods on time this month — Day 33 — even while managing home, college, and my kid. The program fits into real life, which is why it actually works.",
+      "Got my periods on time this month - Day 33 - even while managing home, college, and my kid. The program fits into real life, which is why it actually works.",
   },
   {
     category: "A Truly Personalised Program",

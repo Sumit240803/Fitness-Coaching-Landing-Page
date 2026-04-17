@@ -50,7 +50,7 @@ interface Application {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function formatDate(ts: Timestamp | null): string {
-  if (!ts) return "—";
+  if (!ts) return "-";
   return ts.toDate().toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
@@ -61,7 +61,7 @@ function formatDate(ts: Timestamp | null): string {
 }
 
 function timeAgo(ts: Timestamp | null): string {
-  if (!ts) return "—";
+  if (!ts) return "-";
   const seconds = Math.floor((Date.now() - ts.toDate().getTime()) / 1000);
   if (seconds < 60) return "Just now";
   if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
@@ -120,7 +120,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
             </svg>
           </div>
           <h1 className="font-heading text-2xl font-bold text-[#111111]">Admin Access</h1>
-          <p className="text-sm text-[#666666] mt-1">Coached by Shweta — Applications</p>
+          <p className="text-sm text-[#666666] mt-1">Coached by Shweta - Applications</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-[#e8e8e8] p-6 shadow-sm space-y-4">
@@ -174,7 +174,7 @@ function DetailPanel({ app, onClose }: { app: Application; onClose: () => void }
           ))}
         </div>
       ) : (
-        <p className="text-sm text-[#111111] leading-relaxed">{value || "—"}</p>
+        <p className="text-sm text-[#111111] leading-relaxed">{value || "-"}</p>
       )}
     </div>
   );
@@ -335,7 +335,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
     const avgSeriousness =
       apps.length > 0
         ? (apps.reduce((sum, a) => sum + (parseInt(a.seriousness, 10) || 0), 0) / apps.length).toFixed(1)
-        : "—";
+        : "-";
     const readyNow = apps.filter((a) =>
       a.startTimeline?.toLowerCase().includes("immediately")
     ).length;

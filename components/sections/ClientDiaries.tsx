@@ -23,7 +23,7 @@ export default function ClientDiaries() {
             Lessons on Weight Loss
           </h2>
           <p className="text-white/50 mt-4 text-base">
-            No compromise on taste — eating real food and still losing weight
+            No compromise on taste - eating real food and still losing weight
           </p>
         </motion.div>
 
