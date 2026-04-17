@@ -69,7 +69,7 @@ export default function ProgramInclusions() {
             <div className="absolute inset-0 bg-[#fafaf8] rounded-[2rem] -m-4" />
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg">
               <Image
-                src="/assets/images/WhatsApp Image 2026-04-16 at 12.20.19 PM (2).jpeg"
+                src="/assets/images/program-inclusions.jpeg"
                 alt="Client transformation"
                 fill
                 className="object-cover"

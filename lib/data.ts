@@ -97,22 +97,22 @@ export const testimonials = [
 
 export const transformations = [
   {
-    before: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.31 PM.jpeg",
-    after: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.31 PM (1).jpeg",
+    before: "/assets/images/transformation-1-before.jpeg",
+    after: "/assets/images/transformation-1-after.jpeg",
     result: "Lost 11 kg",
     duration: "12 Weeks",
     caption: "Gained confidence",
   },
   {
-    before: "/assets/images/WhatsApp Image 2026-04-16 at 12.21.02 PM.jpeg",
-    after: "/assets/images/WhatsApp Image 2026-04-16 at 12.21.02 PM (1).jpeg",
+    before: "/assets/images/transformation-2-before.jpeg",
+    after: "/assets/images/transformation-2-after.jpeg",
     result: "Lost 7.5 kg",
     duration: "8 Weeks",
     caption: "Non-extreme restrictions",
   },
   {
-    before: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.19 PM.jpeg",
-    after: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.19 PM (1).jpeg",
+    before: "/assets/images/transformation-3-before.jpeg",
+    after: "/assets/images/transformation-3-after.jpeg",
     result: "Lost 4 kg",
     duration: "8 Weeks",
     caption: "Stay consistent",
@@ -121,19 +121,19 @@ export const transformations = [
 
 export const clientDiaries = [
   {
-    image: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.01 PM.jpeg",
+    image: "/assets/images/diary-1.jpeg",
     meal: "Dal Chawal Modified",
     calories: "~450 kcal",
     protein: "~22g P",
   },
   {
-    image: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.01 PM (1).jpeg",
+    image: "/assets/images/diary-2.jpeg",
     meal: "Quinoa Veggie Bowl with Chicken",
     calories: "~350 kcal",
     protein: "~30g P",
   },
   {
-    image: "/assets/images/WhatsApp Image 2026-04-16 at 12.20.01 PM (2).jpeg",
+    image: "/assets/images/diary-3.jpeg",
     meal: "Overnight Oats + Whey",
     calories: "~329 kcal",
     protein: "~31g P",
