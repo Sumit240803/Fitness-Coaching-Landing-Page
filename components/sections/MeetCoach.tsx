@@ -88,7 +88,7 @@ export default function MeetCoach() {
                 healthy habits.
               </p>
               <p>
-                I specialise in working with busy Indian women in USA &amp; Canada
+                I specialise in working with busy Indian women all over the world
                 who want real results without giving up their culture, their
                 food, or their lifestyle. My approach is rooted in science,
                 personalised to you, and flexible enough for real life.

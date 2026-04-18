@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { transformations } from "@/lib/data";
 
+type Transformation = (typeof transformations)[number];
+
+function isComposite(t: Transformation): t is Transformation & { composite: string } {
+  return "composite" in t && typeof (t as Record<string, unknown>).composite === "string";
+}
+
 export default function Transformations() {
   return (
     <section id="results" className="bg-white py-24 lg:py-32">
@@ -41,32 +47,44 @@ export default function Transformations() {
             >
               <div className="rounded-2xl overflow-hidden bg-[#fafaf8] border border-[#e8e8e8]">
                 {/* Before / After images */}
-                <div className="grid grid-cols-2 gap-0.5 bg-[#e8e8e8]">
+                {isComposite(t) ? (
                   <div className="relative aspect-[3/4]">
                     <Image
-                      src={t.before}
-                      alt="Before transformation"
+                      src={t.composite}
+                      alt="Before and after transformation"
                       fill
-                      sizes="(max-width: 768px) 50vw, 17vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
-                    <span className="absolute top-3 left-3 text-xs font-medium bg-white/80 backdrop-blur-sm px-2 py-1 rounded-full text-[#111111]">
-                      Before
-                    </span>
                   </div>
-                  <div className="relative aspect-[3/4]">
-                    <Image
-                      src={t.after}
-                      alt="After transformation"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 17vw"
-                      className="object-cover"
-                    />
-                    <span className="absolute top-3 left-3 text-xs font-medium bg-[#111111]/80 backdrop-blur-sm px-2 py-1 rounded-full text-white">
-                      After
-                    </span>
+                ) : (
+                  <div className="grid grid-cols-2 gap-0.5 bg-[#e8e8e8]">
+                    <div className="relative aspect-[3/4]">
+                      <Image
+                        src={t.before}
+                        alt="Before transformation"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 17vw"
+                        className="object-cover"
+                      />
+                      <span className="absolute top-3 left-3 text-xs font-medium bg-white/80 backdrop-blur-sm px-2 py-1 rounded-full text-[#111111]">
+                        Before
+                      </span>
+                    </div>
+                    <div className="relative aspect-[3/4]">
+                      <Image
+                        src={t.after}
+                        alt="After transformation"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 17vw"
+                        className="object-cover"
+                      />
+                      <span className="absolute top-3 left-3 text-xs font-medium bg-[#111111]/80 backdrop-blur-sm px-2 py-1 rounded-full text-white">
+                        After
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Result info */}
                 <div className="px-5 py-4 flex items-center justify-between">

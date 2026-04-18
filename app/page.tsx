@@ -10,6 +10,7 @@ import OnlineClasses from "@/components/sections/OnlineClasses";
 import MeetCoach from "@/components/sections/MeetCoach";
 import Testimonials from "@/components/sections/Testimonials";
 import ApplicationForm from "@/components/sections/ApplicationForm";
+import ResetProgram from "@/components/sections/ResetProgram";
 
 export default function Home() {
   return (
@@ -24,8 +25,9 @@ export default function Home() {
         <ClientDiaries />
         <OnlineClasses />
         <MeetCoach />
-        <Testimonials />
         <ApplicationForm />
+        <Testimonials />
+        <ResetProgram />
       </main>
       <Footer />
     </>

@@ -18,7 +18,7 @@ export default function Hero() {
           >
             {/* Tag */}
             <p className="text-xs font-medium tracking-widest uppercase text-[#666666] mb-6">
-              For busy Indian women in USA &amp; Canada
+              For busy Indian women all over the world
             </p>
 
             {/* Headline */}
@@ -81,7 +81,7 @@ export default function Hero() {
                     Real Women. Real Results.
                   </p>
                   <p className="text-sm text-[#666666] mt-0.5">
-                    500+ women transformed across USA &amp; Canada
+                    500+ women transformed all over the world
                   </p>
                 </div>
               </div>

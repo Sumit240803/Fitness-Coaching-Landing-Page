@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     template: "%s | Coached by Shweta",
   },
   description:
-    "Online 1:1 fitness & nutrition coaching for busy Indian women in USA & Canada. Personalised meal plans, home workouts, and accountability - lose 5–8 kg in 12 weeks without extreme dieting. 500+ women coached.",
+    "Online 1:1 fitness & nutrition coaching for busy Indian women all over the world. Personalised meal plans, home workouts, and accountability - lose 5–8 kg in 12 weeks without extreme dieting. 500+ women coached.",
   keywords: [
     "online fitness coach",
     "Indian women fitness USA",
-    "Indian women fitness Canada",
+    "Indian women fitness worldwide",
     "lose weight without dieting",
     "1:1 nutrition coaching",
     "online personal trainer for women",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Coached by Shweta - Lose 5–8 kg in 12 Weeks Without Extreme Dieting",
     description:
-      "Online 1:1 fitness & nutrition coaching for busy Indian women in USA & Canada. 500+ women coached. Apply for limited spots.",
+      "Online 1:1 fitness & nutrition coaching for busy Indian women all over the world. 500+ women coached. Apply for limited spots.",
     url: "https://coachedbyshweta.co",
     siteName: "Coached by Shweta",
     locale: "en_US",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Coached by Shweta - Lose 5–8 kg in 12 Weeks",
     description:
-      "Online 1:1 fitness coaching for busy Indian women in USA & Canada. Personalised nutrition, workouts & accountability.",
+      "Online 1:1 fitness coaching for busy Indian women all over the world. Personalised nutrition, workouts & accountability.",
     images: ["/assets/shweta/2.jpeg"],
   },
   robots: {

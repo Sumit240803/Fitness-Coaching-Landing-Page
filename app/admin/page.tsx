@@ -26,6 +26,7 @@ import {
   CheckSquare,
   RotateCcw,
   Activity,
+  FileSpreadsheet,
 } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -89,6 +90,55 @@ function isThisWeek(ts: Timestamp | null): boolean {
   if (!ts) return false;
   const now = Date.now();
   return now - ts.toDate().getTime() < 7 * 24 * 60 * 60 * 1000;
+}
+
+function escapeCsvCell(value: string): string {
+  if (value.includes(',') || value.includes('"') || value.includes('\n')) {
+    return `"${value.replace(/"/g, '""')}"`;
+  }
+  return value;
+}
+
+function exportToGoogleSheets(apps: Application[]) {
+  const headers = [
+    "Name", "WhatsApp", "Age/Height/Weight", "Profession", "Start Timeline",
+    "Goals", "Previous Training", "Reason for Falling Off", "Workout Time",
+    "Transformation Goal", "Seriousness", "Investment", "Fitness Struggle", "Submitted At"
+  ];
+
+  const rows = apps.map((a) => [
+    a.name,
+    a.whatsapp,
+    a.ageHeightWeight,
+    a.profession,
+    a.startTimeline,
+    (a.goals || []).join("; "),
+    a.previousTraining,
+    a.fallOffReason,
+    a.workoutTime,
+    a.transformationGoal,
+    a.seriousness,
+    a.investment,
+    a.fitnessStruggle,
+    a.submittedAt ? formatDate(a.submittedAt) : "-",
+  ]);
+
+  const csv = [headers, ...rows]
+    .map((row) => row.map((cell) => escapeCsvCell(cell || "")).join(","))
+    .join("\n");
+
+  const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `applications_${new Date().toISOString().split("T")[0]}.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+
+  // Open Google Sheets import page after a short delay
+  setTimeout(() => {
+    window.open("https://sheets.google.com/create", "_blank");
+  }, 500);
 }
 
 // ─── Password Gate ─────────────────────────────────────────────────────────────
@@ -385,6 +435,13 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
             </span>
           </div>
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => exportToGoogleSheets(filtered)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#0f9d58] text-white hover:bg-[#0b8043] transition"
+              title="Download CSV & open Google Sheets"
+            >
+              <FileSpreadsheet size={14} /> Export to Sheets
+            </button>
             <span className="text-xs text-[#999] hidden sm:block">@CoachedbyShweta</span>
             <button
               onClick={onLogout}

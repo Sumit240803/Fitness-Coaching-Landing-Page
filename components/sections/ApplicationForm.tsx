@@ -401,6 +401,9 @@ export default function ApplicationForm() {
                   <label className={labelClass}>
                     Which investment range are you comfortable with? *
                   </label>
+                  <p className="text-sm text-[#666666] leading-relaxed mt-1 mb-1">
+                    Our coaching includes personalized nutrition guidance, structured workouts, and 1:1 live personal training sessions each week. Based on the level of support you&apos;re looking for, what investment range would you be comfortable with?
+                  </p>
                   <PillRadio
                     label="Investment range"
                     options={investmentOptions}

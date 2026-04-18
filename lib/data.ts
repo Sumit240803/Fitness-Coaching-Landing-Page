@@ -117,6 +117,24 @@ export const transformations = [
     duration: "8 Weeks",
     caption: "Stay consistent",
   },
+  {
+    composite: "/assets/images/transformation-4.jpeg",
+    result: "Amazing Progress",
+    duration: "12 Weeks",
+    caption: "Total body transformation",
+  },
+  {
+    composite: "/assets/images/transformation-5.jpeg",
+    result: "Incredible Change",
+    duration: "12 Weeks",
+    caption: "Consistency pays off",
+  },
+  {
+    composite: "/assets/images/transformation-6.jpeg",
+    result: "Stunning Results",
+    duration: "10 Weeks",
+    caption: "Strength & confidence",
+  },
 ];
 
 export const clientDiaries = [
