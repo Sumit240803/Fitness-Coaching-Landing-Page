@@ -30,7 +30,7 @@ export default function WhyDietsFail() {
               <br />
               <span className="italic font-light">Diets Fail</span>
             </h2>
-            <p className="text-[#666666] mt-6 text-base leading-relaxed max-w-sm">
+            <p className="text-[#2a2a2a] mt-6 text-base leading-relaxed max-w-sm">
               The issue isn&apos;t your willpower. It&apos;s the plan. Here&apos;s why
               generic diets never last - and what we do differently.
             </p>
@@ -67,7 +67,7 @@ export default function WhyDietsFail() {
                     <h3 className="font-heading text-lg font-semibold text-[#111111]">
                       {p.title}
                     </h3>
-                    <p className="text-sm text-[#666666] mt-1 leading-relaxed">
+                    <p className="text-sm text-[#2a2a2a] mt-1 leading-relaxed">
                       {p.description}
                     </p>
                   </div>

@@ -42,7 +42,7 @@ export default function ProgramInclusions() {
                     <h3 className="font-heading text-xl font-semibold text-[#111111]">
                       {f.title}
                     </h3>
-                    <p className="text-[#666666] mt-1.5 text-sm leading-relaxed">
+                    <p className="text-[#2a2a2a] mt-1.5 text-sm leading-relaxed">
                       {f.description}
                     </p>
                   </div>

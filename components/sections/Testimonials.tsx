@@ -44,7 +44,7 @@ export default function Testimonials() {
                     className="fill-[#d4a8a4] text-[#d4a8a4]"
                   />
                 ))}
-                <span className="text-xs text-[#999999] ml-1">{t.rating}/5</span>
+                <span className="text-xs text-[#1a1a1a] ml-1">{t.rating}/5</span>
               </div>
 
               {/* Category badge */}
@@ -53,7 +53,7 @@ export default function Testimonials() {
               </span>
 
               {/* Quote */}
-              <blockquote className="text-sm text-[#444444] leading-relaxed flex-1">
+              <blockquote className="text-sm text-[#1a1a1a] leading-relaxed flex-1">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 

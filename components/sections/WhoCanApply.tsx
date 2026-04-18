@@ -74,7 +74,7 @@ export default function WhoCanApply() {
                   <span className="flex-shrink-0 mt-1 w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center">
                     <Check size={12} className="text-emerald-600" />
                   </span>
-                  <span className="text-sm text-[#444444] leading-relaxed">
+                  <span className="text-sm text-[#1a1a1a] leading-relaxed">
                     {item}
                   </span>
                 </motion.li>
@@ -111,7 +111,7 @@ export default function WhoCanApply() {
                   <span className="flex-shrink-0 mt-1 w-5 h-5 rounded-full bg-red-50 flex items-center justify-center">
                     <X size={12} className="text-red-500" />
                   </span>
-                  <span className="text-sm text-[#444444] leading-relaxed">
+                  <span className="text-sm text-[#1a1a1a] leading-relaxed">
                     {item}
                   </span>
                 </motion.li>
@@ -120,7 +120,7 @@ export default function WhoCanApply() {
 
             {/* CTA inside the "not for" card */}
             <div className="mt-8 pt-6 border-t border-[#e8e8e8]">
-              <p className="text-sm text-[#666666] mb-4">
+              <p className="text-sm text-[#2a2a2a] mb-4">
                 If you see yourself in the left column, you&apos;re exactly who
                 this program was built for.
               </p>

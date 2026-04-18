@@ -62,7 +62,7 @@ export default function Navbar() {
                 e.preventDefault();
                 scrollTo(link.target);
               }}
-              className="text-sm font-medium text-[#666666] hover:text-[#111111] transition-colors"
+              className="text-sm font-medium text-[#2a2a2a] hover:text-[#111111] transition-colors"
             >
               {link.label}
             </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
                 setMenuOpen(false);
                 setTimeout(() => scrollTo(link.target), 100);
               }}
-              className="block py-3 text-base font-medium text-[#444444] hover:text-[#111111] border-b border-[#f0f0f0] last:border-0 transition-colors"
+              className="block py-3 text-base font-medium text-[#1a1a1a] hover:text-[#111111] border-b border-[#f0f0f0] last:border-0 transition-colors"
             >
               {link.label}
             </a>

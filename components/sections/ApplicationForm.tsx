@@ -58,7 +58,7 @@ function PillRadio({
           className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
             value === opt
               ? "bg-[#111111] text-white border-[#111111]"
-              : "bg-white text-[#444444] border-[#e8e8e8] hover:border-[#111111]"
+              : "bg-white text-[#1a1a1a] border-[#e8e8e8] hover:border-[#111111]"
           }`}
         >
           {opt}
@@ -94,7 +94,7 @@ function PillCheckbox({
           className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
             values.includes(opt)
               ? "bg-[#111111] text-white border-[#111111]"
-              : "bg-white text-[#444444] border-[#e8e8e8] hover:border-[#111111]"
+              : "bg-white text-[#1a1a1a] border-[#e8e8e8] hover:border-[#111111]"
           }`}
         >
           {opt}
@@ -126,7 +126,7 @@ function SeriousnessScale({
             className={`w-10 h-10 rounded-full text-sm font-medium border transition-all ${
               value === num
                 ? "bg-[#111111] text-white border-[#111111]"
-                : "bg-white text-[#444444] border-[#e8e8e8] hover:border-[#111111]"
+                : "bg-white text-[#1a1a1a] border-[#e8e8e8] hover:border-[#111111]"
             }`}
           >
             {num}
@@ -401,7 +401,7 @@ export default function ApplicationForm() {
                   <label className={labelClass}>
                     Which investment range are you comfortable with? *
                   </label>
-                  <p className="text-sm text-[#666666] leading-relaxed mt-1 mb-1">
+                  <p className="text-sm text-[#2a2a2a] leading-relaxed mt-1 mb-1">
                     Our coaching includes personalized nutrition guidance, structured workouts, and 1:1 live personal training sessions each week. Based on the level of support you&apos;re looking for, what investment range would you be comfortable with?
                   </p>
                   <PillRadio
@@ -440,7 +440,7 @@ export default function ApplicationForm() {
                     onChange={(e) => setConsent(e.target.checked)}
                     className="mt-1 h-4 w-4 rounded border-[#e8e8e8] accent-[#111111]"
                   />
-                  <span className="text-xs text-[#666666] leading-relaxed">
+                  <span className="text-xs text-[#2a2a2a] leading-relaxed">
                     I agree to the{" "}
                     <a
                       href="/privacy-policy"
@@ -470,7 +470,7 @@ export default function ApplicationForm() {
                     "Submit Application"
                   )}
                 </button>
-                <p className="text-center text-xs text-[#999999]">
+                <p className="text-center text-xs text-[#1a1a1a]">
                   We will personally review your application and reply
                   on WhatsApp within 24–48 hours.
                 </p>

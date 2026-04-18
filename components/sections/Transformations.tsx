@@ -28,7 +28,7 @@ export default function Transformations() {
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#111111]">
             Real Women. Real Results.
           </h2>
-          <p className="text-[#666666] mt-4 max-w-lg mx-auto">
+          <p className="text-[#2a2a2a] mt-4 max-w-lg mx-auto">
             No extreme diets. No unsustainable routines. Just consistent effort
             with a plan built for your life.
           </p>
@@ -92,7 +92,7 @@ export default function Transformations() {
                     <p className="font-heading text-lg font-semibold text-[#111111]">
                       {t.result}
                     </p>
-                    <p className="text-xs text-[#999999] mt-0.5">{t.caption}</p>
+                    <p className="text-xs text-[#1a1a1a] mt-0.5">{t.caption}</p>
                   </div>
                   <span className="text-xs font-medium bg-[#111111] text-white px-3 py-1.5 rounded-full">
                     {t.duration}

@@ -59,7 +59,7 @@ export default function MeetCoach() {
               <p className="font-heading text-2xl font-bold text-[#111111]">
                 5+ Years
               </p>
-              <p className="text-xs text-[#666666] mt-0.5">
+              <p className="text-xs text-[#2a2a2a] mt-0.5">
                 Coaching experience
               </p>
             </motion.div>
@@ -81,7 +81,7 @@ export default function MeetCoach() {
               <span className="italic font-light">Shweta</span>
             </h2>
 
-            <div className="space-y-4 text-[#555555] text-base leading-relaxed">
+            <div className="space-y-4 text-[#222222] text-base leading-relaxed">
               <p>
                 I&apos;m Shweta - an online fitness coach who has helped hundreds of
                 women lose weight, build strength, and create sustainable
@@ -106,7 +106,7 @@ export default function MeetCoach() {
             >
               Apply Now for 1:1 Coaching
             </a>
-            <p className="text-xs tracking-widest uppercase text-[#999999] mt-3">
+            <p className="text-xs tracking-widest uppercase text-[#1a1a1a] mt-3">
               Limited spots available
             </p>
           </motion.div>

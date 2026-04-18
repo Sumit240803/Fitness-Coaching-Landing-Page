@@ -16,19 +16,19 @@ export default function Footer() {
           href="https://www.instagram.com/coachedbyshweta"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-script text-base text-[#666666] hover:text-[#111111] transition-colors"
+          className="font-script text-base text-[#2a2a2a] hover:text-[#111111] transition-colors"
         >
           @CoachedbyShweta
         </a>
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <Link
             href="/privacy-policy"
-            className="text-xs text-[#999999] hover:text-[#111111] transition-colors"
+            className="text-xs text-[#1a1a1a] hover:text-[#111111] transition-colors"
           >
             Privacy Policy
           </Link>
           <span className="hidden sm:inline text-[#e8e8e8]">|</span>
-          <p className="text-xs text-[#999999]">
+          <p className="text-xs text-[#1a1a1a]">
             &copy; {new Date().getFullYear()} Coached by Shweta. All rights reserved.
           </p>
         </div>

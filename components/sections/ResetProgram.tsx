@@ -20,7 +20,7 @@ export default function ResetProgram() {
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#111111]">
             The Reset Program
           </h2>
-          <p className="text-[#666666] mt-4 text-base max-w-2xl mx-auto">
+          <p className="text-[#2a2a2a] mt-4 text-base max-w-2xl mx-auto">
             Learn more about how the program works, what&apos;s included, and the
             results you can expect.
           </p>

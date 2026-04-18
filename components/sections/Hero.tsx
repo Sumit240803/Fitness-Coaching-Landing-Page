@@ -17,7 +17,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             {/* Tag */}
-            <p className="text-xs font-medium tracking-widest uppercase text-[#666666] mb-6">
+            <p className="text-xs font-medium tracking-widest uppercase text-[#2a2a2a] mb-6">
               For busy Indian women all over the world
             </p>
 
@@ -34,7 +34,7 @@ export default function Hero() {
             {/* Benefits checklist */}
             <ul className="space-y-3 mb-10">
               {benefits.map((b) => (
-                <li key={b} className="flex items-center gap-3 text-[#444444]">
+                <li key={b} className="flex items-center gap-3 text-[#1a1a1a]">
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#f2e8e7] flex items-center justify-center">
                     <Check size={11} className="text-[#d4a8a4]" strokeWidth={3} />
                   </span>
@@ -51,7 +51,7 @@ export default function Hero() {
               >
                 Apply for 1:1 Coaching
               </a>
-              <p className="self-center text-xs tracking-widest uppercase text-[#999999]">
+              <p className="self-center text-xs tracking-widest uppercase text-[#1a1a1a]">
                 Limited spots available
               </p>
             </div>
@@ -80,7 +80,7 @@ export default function Hero() {
                   <p className="font-heading text-lg font-semibold text-[#111111]">
                     Real Women. Real Results.
                   </p>
-                  <p className="text-sm text-[#666666] mt-0.5">
+                  <p className="text-sm text-[#2a2a2a] mt-0.5">
                     500+ women transformed all over the world
                   </p>
                 </div>
