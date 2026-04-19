@@ -149,6 +149,7 @@ const fieldClass = "space-y-1";
 export default function ApplicationForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    email: "",
     whatsapp: "",
     ageHeightWeight: "",
     profession: "",
@@ -176,7 +177,7 @@ export default function ApplicationForm() {
 
     // Basic validation
     const required: (keyof FormData)[] = [
-      "name", "whatsapp", "ageHeightWeight", "profession", "startTimeline",
+      "name", "email", "whatsapp", "ageHeightWeight", "profession", "startTimeline",
       "previousTraining", "fallOffReason", "workoutTime",
       "transformationGoal", "seriousness", "investment", "fitnessStruggle",
     ];
@@ -259,7 +260,20 @@ export default function ApplicationForm() {
                   />
                 </div>
 
-                {/* 2. WhatsApp */}
+                {/* 2. Email */}
+                <div className={fieldClass}>
+                  <label htmlFor="field-email" className={labelClass}>Email Address *</label>
+                  <input
+                    id="field-email"
+                    type="email"
+                    className={inputClass}
+                    placeholder="e.g. priya@example.com"
+                    value={formData.email}
+                    onChange={(e) => set("email", e.target.value)}
+                  />
+                </div>
+
+                {/* 3. WhatsApp */}
                 <div className={fieldClass}>
                   <label htmlFor="field-whatsapp" className={labelClass}>WhatsApp Number *</label>
                   <input
