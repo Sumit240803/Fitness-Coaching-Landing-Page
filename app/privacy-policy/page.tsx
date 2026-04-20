@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PageViewTracker from "@/components/PageViewTracker";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-white py-24 lg:py-32">
+      <PageViewTracker contentName="Privacy Policy" contentCategory="Legal" />
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <Link
           href="/"

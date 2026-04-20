@@ -206,10 +206,8 @@ export default function ApplicationForm() {
     setLoading(false);
 
     if (result.success) {
-      fbq.event("Lead", {
-        content_name: "Application Form",
-        content_category: "1:1 Coaching",
-      });
+      fbq.lead();
+      fbq.submitApplication();
       router.push("/thank-you");
     } else {
       setError(result.error);

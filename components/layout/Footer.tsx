@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import * as fbq from "@/lib/fbpixel";
 
 export default function Footer() {
   return (
@@ -16,6 +19,7 @@ export default function Footer() {
           href="https://www.instagram.com/coachedbyshweta"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => fbq.contact("Instagram")}
           className="font-script text-base text-[#2a2a2a] hover:text-[#111111] transition-colors"
         >
           @CoachedbyShweta

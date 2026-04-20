@@ -12,10 +12,12 @@ import MeetCoach from "@/components/sections/MeetCoach";
 import Testimonials from "@/components/sections/Testimonials";
 import ApplicationForm from "@/components/sections/ApplicationForm";
 import ResetProgram from "@/components/sections/ResetProgram";
+import PageViewTracker from "@/components/PageViewTracker";
 
 export default function Home() {
   return (
     <>
+      <PageViewTracker contentName="Home" contentCategory="Landing Page" />
       <Navbar />
       <main>
         <Hero />
