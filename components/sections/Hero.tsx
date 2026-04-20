@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { benefits } from "@/lib/data";
+import * as fbq from "@/lib/fbpixel";
 
 export default function Hero() {
   return (
@@ -47,6 +48,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <a
                 href="#apply"
+                onClick={() => fbq.event("InitiateCheckout", { content_name: "Hero CTA" })}
                 className="inline-flex items-center px-8 py-4 rounded-full bg-[#111111] text-white font-medium text-base hover:bg-[#333333] transition-colors"
               >
                 Apply for 1:1 Coaching

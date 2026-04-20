@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import * as fbq from "@/lib/fbpixel";
 
 const navLinks = [
   { label: "About", target: "about" },
@@ -77,6 +78,7 @@ export default function Navbar() {
               e.preventDefault();
               scrollTo("apply");
               setMenuOpen(false);
+              fbq.event("InitiateCheckout", { content_name: "Navbar CTA" });
             }}
             className="inline-flex items-center px-5 py-2.5 rounded-full bg-[#111111] text-white text-sm font-medium hover:bg-[#333333] transition-colors"
           >

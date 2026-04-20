@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitForm, type FormData } from "@/app/actions/submitForm";
+import * as fbq from "@/lib/fbpixel";
 
 const startOptions = [
   "Immediately (within the next few days)",
@@ -205,6 +206,10 @@ export default function ApplicationForm() {
     setLoading(false);
 
     if (result.success) {
+      fbq.event("Lead", {
+        content_name: "Application Form",
+        content_category: "1:1 Coaching",
+      });
       router.push("/thank-you");
     } else {
       setError(result.error);
