@@ -1,5 +1,3 @@
-"use server";
-
 import { randomUUID } from "crypto";
 
 const FB_PIXEL_ID = "1656013225576369";
