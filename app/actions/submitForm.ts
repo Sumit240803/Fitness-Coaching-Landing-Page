@@ -2,6 +2,7 @@
 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { trackFormSubmission } from "@/lib/fbcapi";
 
 export interface FormData {
   name: string;
@@ -46,6 +47,17 @@ export async function submitForm(data: FormData): Promise<FormResult> {
       });
     } catch (emailErr) {
       console.error("Email sending failed:", emailErr);
+    }
+
+    // Fire server-side Conversions API events (non-blocking)
+    try {
+      await trackFormSubmission({
+        email: data.email,
+        phone: data.whatsapp,
+        name: data.name,
+      });
+    } catch (capiErr) {
+      console.error("FB Conversions API failed:", capiErr);
     }
 
     return { success: true };
