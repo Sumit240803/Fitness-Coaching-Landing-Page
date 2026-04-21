@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
 
-const FB_PIXEL_ID = "1656013225576369";
+const FB_PIXEL_ID = "2131327440986867";
 const FB_API_VERSION = "v21.0";
 const FB_API_URL = `https://graph.facebook.com/${FB_API_VERSION}/${FB_PIXEL_ID}/events`;
 
