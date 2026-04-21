@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Cormorant_Garamond, DM_Sans, Dancing_Script } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -132,7 +133,10 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="min-h-full flex flex-col">
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          {children}
+          <WhatsAppButton />
+        </MotionProvider>
       </body>
     </html>
   );
