@@ -128,7 +128,7 @@ export default function WhoCanApply() {
                 href="#apply"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-[#111111] text-white text-sm font-medium hover:bg-[#333333] transition-colors"
               >
-                Apply Now
+                Book a Free Discovery Call
               </a>
             </div>
           </motion.div>

@@ -82,7 +82,7 @@ export default function Navbar() {
             }}
             className="inline-flex items-center px-5 py-2.5 rounded-full bg-[#111111] text-white text-sm font-medium hover:bg-[#333333] transition-colors"
           >
-            Apply Now
+            Book a Free Discovery Call
           </a>
 
           {/* Mobile Hamburger */}

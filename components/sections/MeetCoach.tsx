@@ -104,7 +104,7 @@ export default function MeetCoach() {
               href="#apply"
               className="inline-flex mt-10 items-center px-8 py-4 rounded-full bg-[#111111] text-white font-medium text-base hover:bg-[#333333] transition-colors"
             >
-              Apply Now for 1:1 Coaching
+              Book a Free Discovery Call for 1:1 Coaching
             </a>
             <p className="text-xs tracking-widest uppercase text-[#1a1a1a] mt-3">
               Limited spots available

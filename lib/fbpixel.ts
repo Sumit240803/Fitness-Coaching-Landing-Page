@@ -24,7 +24,7 @@ export function viewContent(contentName: string, contentCategory?: string) {
   });
 }
 
-/** User clicks an "Apply Now" CTA */
+/** User clicks an "Book a Free Discovery Call" CTA */
 export function initiateCheckout(contentName: string) {
   window.fbq("track", "InitiateCheckout", { content_name: contentName });
 }

@@ -229,7 +229,7 @@ export default function ApplicationForm() {
             The Reset Program
           </p>
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white">
-            Apply Now
+            Book a Free Discovery Call
           </h2>
           <p className="text-white/50 mt-4 text-base">
             Limited spots available. Tell us a little about yourself.
