@@ -54,7 +54,7 @@ export default function ProgramInclusions() {
               href="#apply"
               className="inline-flex mt-12 items-center px-8 py-4 rounded-full bg-[#111111] text-white font-medium text-base hover:bg-[#333333] transition-colors"
             >
-              Apply for 1:1 Coaching
+              Book a Free Discovery Call Coaching
             </a>
           </motion.div>
 
