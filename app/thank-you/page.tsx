@@ -22,20 +22,15 @@ export default function ThankYou() {
         <CheckCircle2 size={64} className="text-[#d4a8a4] mx-auto mb-6" />
 
         <h1 className="font-heading text-3xl lg:text-4xl font-bold text-[#111111] mb-4">
-          Thank You!
+          Application Received!
         </h1>
 
-        <p className="text-[#666666] text-base leading-relaxed mb-3">
-          Your application has been received. We will review it and get
-          back to you on WhatsApp within 24–48 hours.
+        <p className="text-[#111111] text-lg lg:text-xl font-semibold leading-relaxed mb-3">
+          Next step: book your free call below.
         </p>
 
-        <p className="text-[#555555] text-base leading-relaxed mb-10">
-          In the meantime, book your{" "}
-          <span className="font-semibold text-[#111111]">
-            free clarity call
-          </span>{" "}
-          to discuss your fitness goals.
+        <p className="text-[#666666] text-sm leading-relaxed mb-8">
+          Pick a time that works for you — this call is required to move forward.
         </p>
 
         <a
@@ -43,9 +38,9 @@ export default function ThankYou() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => fbq.schedule("Clarity Call")}
-          className="inline-flex items-center px-8 py-4 rounded-full bg-[#d4a8a4] text-white font-medium text-base hover:bg-[#c4918d] transition-colors"
+          className="inline-flex items-center px-8 py-4 rounded-full bg-[#d4a8a4] text-white font-semibold text-base hover:bg-[#c4918d] transition-colors shadow-lg animate-pulse"
         >
-          Book Your Free Clarity Call
+          Book My Free Call →
         </a>
 
         <div className="mt-6">
